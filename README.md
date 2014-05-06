@@ -1,4 +1,4 @@
 diceroll
 ========
 
-Show dice
+Show dice here: http://xosofox.github.io/diceroll/
