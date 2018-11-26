@@ -3,102 +3,95 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
+        <title>Dice Roll</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.css">
+        <style type="text/css">
+            div.dice {
+                border-radius: 4px;
+                background-color: white;
+                color: black;
+                border: 1px solid black;
+                width: 40px;
+                height: 40px;
+                position: relative;
+            }
 
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-	<style type="text/css">
-		.double {
-			-webkit-transform: scale(2);
-			-moz-transform: scale(2);
-			-ms-transform: scale(2);
-			-o-transform: scale(2);
-			transform: scale(2);
-		}			
+            div.pips {
+                border-radius: 8px;
+                background-color: black;
+                color: black;
+                border: 1px solid black;
+                width: 8px;
+                height: 8px;
+                position: absolute;
+            }
 
-		div.dice {
-			-webkit-border-radius: 4px;
-			-moz-border-radius: 4px;
-			border-radius: 4px;
-			background-color: white;
-			color: black;
-			border: 1px solid black;
-			width: 40px;
-			height: 40px;
-			position: relative;
-		}
-		div.pips {
-			-webkit-border-radius: 8px;
-			-moz-border-radius: 8px;
-			border-radius: 8px;
-			background-color: black;
-			color: black;
-			border: 1px solid black;
-			width: 8px;
-			height: 8px;
-			position: absolute;
-		}
+            div.pip1 {
+                left: 4px;
+                top: 4px;
+            }
 
-		div.pip1 {
-			left: 4px;
-			top: 4px;
-		}
+            div.pip2 {
+                right: 4px;
+                top: 4px;
+            }
 
-		div.pip2 {
-			right: 4px;
-			top: 4px;
-		}
+            div.pip3 {
+                left: 4px;
+                top: 15px;
+            }
 
-		div.pip3 {
-			left: 4px;
-			top: 15px;
-		}
+            div.pip4 {
+                left: 15px;
+                top: 15px;
+            }
 
-		div.pip4 {
-			left: 15px;
-			top: 15px;
-		}
+            div.pip5 {
+                right: 4px;
+                top: 15px;
+            }
 
-		div.pip5 {
-			right: 4px;
-			top: 15px;
-		}
+            div.pip6 {
+                left: 4px;
+                bottom: 4px;
+            }
 
-		div.pip6 {
-			left: 4px;
-			bottom: 4px;
-		}
+            div.pip7 {
+                right: 4px;
+                bottom: 4px;
+            }
 
-		div.pip7 {
-			right: 4px;
-			bottom: 4px;
-		}
+            .rolling {
+                animation: spin 500ms linear infinite;
+            }
+
+            @keyframes spin {
+                100% {
+                    transform: rotate(360deg);
+                )
+                }
+            }
 
 
-	</style>
+        </style>
     </head>
     <body>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
         <script src="js/main.js"></script>
-	<div class="dice double" id="mainDie" style="position: absolute; left: 200px; top: 200px;">
-		<div class="pips pip1"></div>
-		<div class="pips pip2"></div>
-		<div class="pips pip3"></div>
-		<div class="pips pip4"></div>
-		<div class="pips pip5"></div>
-		<div class="pips pip6"></div>
-		<div class="pips pip7"></div>
-	</div>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			rollMain();
-		});
-		$('#mainDie').click(rollMain);
-	</script>
+        <div class="dice double" id="mainDie" style="position: absolute; left: 200px; top: 200px;">
+            <div class="pips pip1"></div>
+            <div class="pips pip2"></div>
+            <div class="pips pip3"></div>
+            <div class="pips pip4"></div>
+            <div class="pips pip5"></div>
+            <div class="pips pip6"></div>
+            <div class="pips pip7"></div>
+        </div>
+        <script type="text/javascript">
+            window.addEventListener('click', function() {
+                rollMain();
+            });
+        </script>
     </body>
 </html>
